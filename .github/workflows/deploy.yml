@@ -41,3 +41,5 @@ jobs:
           HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
           IMG: "ghcr.io/${{ github.repository_owner }}/python-cicd-kata:${{ github.sha }}"
         run: curl --fail -sS --get --data-urlencode "imgURL=$IMG" "$HOOK"
+      - name: Enlace
+        run: echo "🚀 [Abrir la aplicación](${{ vars.RENDER_URL }})" >> $GITHUB_STEP_SUMMARY
